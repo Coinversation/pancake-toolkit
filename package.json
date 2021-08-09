@@ -1,20 +1,12 @@
 {
-  "name": "pancake-toolkit",
+  "name": "kaco-toolkit",
   "version": "1.0.0",
-  "description": "Pancake frontend packages",
+  "description": "Kaco frontend packages",
   "private": true,
   "workspaces": [
     "packages/*"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pancakeswap/pancake-toolkit.git"
-  },
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/pancakeswap/pancake-toolkit/issues"
-  },
-  "homepage": "https://github.com/pancakeswap/pancake-toolkit#readme",
   "scripts": {
     "build": "lerna run build",
     "test": "lerna run test",
@@ -24,10 +16,7 @@
     "release": "yarn build && yarn lerna publish"
   },
   "husky": {
-    "hooks": {
-      "pre-commit": "yarn format:check",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
+    "hooks": {}
   },
   "devDependencies": {
     "@babel/core": "^7.14.3",
