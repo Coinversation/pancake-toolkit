@@ -28,9 +28,9 @@ const Heading = styled(Text).attrs({ bold: true })<HeadingProps>`
   font-size: 16px;
   font-weight: bold;
   color: #ffffff;
-  ${({ theme }) => theme.mediaQueries.lg} {
+  /* ${({ theme }) => theme.mediaQueries.lg} {
     font-size: ${({ scale }) => style[scale || scales.MD].fontSizeLg};
-  }
+  } */
 `;
 
 Heading.defaultProps = {

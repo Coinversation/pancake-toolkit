@@ -36,10 +36,10 @@ const Input = styled.input<InputProps>`
   background-color: ${({ theme }) => theme.colors.input};
   border: 0;
   border-radius: 16px;
-  box-shadow: ${getBoxShadow};
   color: ${({ theme }) => theme.colors.text};
   display: block;
-  font-size: 16px;
+  font-size: 20px;
+  font-weight: bold;
   height: ${getHeight};
   outline: 0;
   padding: 0 16px;
@@ -58,7 +58,7 @@ const Input = styled.input<InputProps>`
   }
 
   &:focus:not(:disabled) {
-    box-shadow: ${({ theme }) => theme.shadows.focus};
+    /* box-shadow: ${({ theme }) => theme.shadows.focus}; */
   }
 `;
 

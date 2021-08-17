@@ -17,7 +17,7 @@ const Slider: React.FC<SliderProps> = ({
   max,
   value,
   onValueChanged,
-  valueLabel,
+  valueLabel = false,
   step = "any",
   disabled = false,
   ...props
@@ -42,11 +42,11 @@ const Slider: React.FC<SliderProps> = ({
   const displayValueLabel = isMax ? "MAX" : valueLabel;
   return (
     <Box position="relative" height="48px" {...props}>
-      <BunnyButt disabled={disabled} />
       <BunnySlider>
         <BarBackground disabled={disabled} />
         <BarProgress style={{ width: progressWidth }} disabled={disabled} />
         <StyledInput
+          style={{ margin: "0px" }}
           name={name}
           type="range"
           min={min}
@@ -58,11 +58,11 @@ const Slider: React.FC<SliderProps> = ({
           disabled={disabled}
         />
       </BunnySlider>
-      {valueLabel && (
+      {/* {valueLabel && (
         <SliderLabelContainer>
           <SliderLabel progress={labelProgress}>{displayValueLabel}</SliderLabel>
         </SliderLabelContainer>
-      )}
+      )} */}
     </Box>
   );
 };

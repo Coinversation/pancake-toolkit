@@ -19,7 +19,7 @@ interface Props {
 }
 
 const WalletWrapper = styled(Box)`
-  border-bottom: 1px solid ${({ theme }) => theme.colors.cardBorder};
+  /* border-bottom: 1px solid ${({ theme }) => theme.colors.cardBorder}; */
 `;
 
 /**
@@ -51,12 +51,13 @@ const getPreferredConfig = (walletConfig: Config[]) => {
 const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null, displayCount = 3 }) => {
   const [showMore, setShowMore] = useState(false);
   const theme = useTheme();
-  const sortedConfig = getPreferredConfig(config);
+  const sortedConfig = getPreferredConfig(config).filter((c) => c.title === "Metamask");
   const displayListConfig = showMore ? sortedConfig : sortedConfig.slice(0, displayCount);
 
+  console.log("sortedConfig", sortedConfig);
   return (
     <ModalContainer minWidth="320px">
-      <ModalHeader background={getThemeValue("colors.gradients.bubblegum")(theme)}>
+      <ModalHeader>
         <ModalTitle>
           <Heading>Connect Wallet</Heading>
         </ModalTitle>
@@ -70,10 +71,10 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null, displayC
                 <WalletCard walletConfig={wallet} login={login} onDismiss={onDismiss} />
               </Box>
             ))}
-            {!showMore && <MoreWalletCard onClick={() => setShowMore(true)} />}
+            {/* {!showMore && <MoreWalletCard onClick={() => setShowMore(true)} />} */}
           </Grid>
         </WalletWrapper>
-        <Box p="24px">
+        {/* <Box p="24px">
           <Text textAlign="center" color="textSubtle" as="p" mb="16px">
             Haven&#39;t got a crypto wallet yet?
           </Text>
@@ -86,7 +87,7 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null, displayC
           >
             Learn How to Connect
           </Button>
-        </Box>
+        </Box> */}
       </ModalBody>
     </ModalContainer>
   );
