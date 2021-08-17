@@ -1,6 +1,6 @@
 {
   "name": "@kaco/uikit",
-  "version": "0.46.23",
+  "version": "0.46.24",
   "description": "Set of UI components for pancake projects",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
