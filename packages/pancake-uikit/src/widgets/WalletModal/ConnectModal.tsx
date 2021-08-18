@@ -65,14 +65,12 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null, displayC
       </ModalHeader>
       <ModalBody width={["320px", null, "340px"]}>
         <WalletWrapper py="24px" maxHeight="453px" overflowY="auto">
-          <Grid gridTemplateColumns="1fr 1fr">
-            {displayListConfig.map((wallet) => (
-              <Box key={wallet.title}>
-                <WalletCard walletConfig={wallet} login={login} onDismiss={onDismiss} />
-              </Box>
-            ))}
-            {/* {!showMore && <MoreWalletCard onClick={() => setShowMore(true)} />} */}
-          </Grid>
+          {displayListConfig.map((wallet) => (
+            <Box key={wallet.title}>
+              <WalletCard walletConfig={wallet} login={login} onDismiss={onDismiss} />
+            </Box>
+          ))}
+          {/* {!showMore && <MoreWalletCard onClick={() => setShowMore(true)} />} */}
         </WalletWrapper>
         {/* <Box p="24px">
           <Text textAlign="center" color="textSubtle" as="p" mb="16px">
