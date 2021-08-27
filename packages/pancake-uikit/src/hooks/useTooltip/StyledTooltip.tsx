@@ -29,7 +29,7 @@ export const StyledTooltip = styled.div`
   box-shadow: ${({ theme }) => theme.tooltip.boxShadow};
   border: ${({ theme }) => theme.tooltip.border};
 
-  &[data-popper-placement^="top"] > ${Arrow} {
+  /* &[data-popper-placement^="top"] > ${Arrow} {
     bottom: -4px;
   }
 
@@ -43,5 +43,5 @@ export const StyledTooltip = styled.div`
 
   &[data-popper-placement^="right"] > ${Arrow} {
     left: -4px;
-  }
+  } */
 `;
